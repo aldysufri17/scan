@@ -21,9 +21,10 @@
             const getid = data.substring(data.indexOf('_') + 1);
             const lower = parseInt(getid);
             var url = "http://silab18.herokuapp.com/store/"+lower+"";
+            alert(url);
             // url = url.replace(':lower', lower);
             document.getElementById('audio').play();
-            window.location.href = url;
+            // window.location.href = url;
         });
         Instascan.Camera.getCameras().then(cameras => {
             if (cameras.length > 0) {
