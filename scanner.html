@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Instascan</title>
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
+</head>
+
+<body>
+    <video width="320" height="240" id="preview"></video>
+    <audio hidden id="audio">
+        <source src="barcode.wav" type="audio/mpeg">
+    </audio>
+    <script>
+        let scanner = new Instascan.Scanner({
+            video: document.getElementById('preview')
+        });
+        scanner.addListener('scan', function (content) {
+            // const data = content;
+
+            // const getid = data.substring(data.indexOf('_') + 1);
+            // const lower = parseInt(getid);
+            var url = 'http://silab18.herokuapp.com/store/2081964510935276';
+            // url = url.replace(':lower', lower);
+            document.getElementById('audio').play();
+            window.location.href = url;
+        });
+        Instascan.Camera.getCameras().then(cameras => {
+            if (cameras.length > 0) {
+                scanner.start(cameras[0]);
+            } else {
+                console.error("Não existe câmera no dispositivo!");
+            }
+        });
+    </script>
+</body>
+
+</html>
