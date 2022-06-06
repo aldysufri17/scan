@@ -11,13 +11,22 @@
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+.back{
+    background-color: rgb(255, 0, 0);
+    width: 80px;
+    height: 30px;
+}
     </style>
     <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js"></script>
 </head>
 
 <body style="background-color: #505050;">
+    <button class="back">
+        <a  href="http://silab18.herokuapp.com/public/konfirmasi-peminjaman" style="text-decoration:none; color: rgb(255, 255, 255);">Kembali</a>
+    </button>
     <div class="content">
-        <h1 style="text-align: center; color:white" >Scan Pengembalian Peminjaman</h1>
+        <h1 style="text-align: center; color:white">Scan Pengembalian Peminjaman</h1>
         <video width="520" height="340" id="preview"></video>
     </div>
     <audio hidden id="audio">
